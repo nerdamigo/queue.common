@@ -65,7 +65,9 @@ namespace NerdAmigo.Queue.Common
 					}
 					else
 					{
-						Logger.Log(new LogEntry(LogEventSeverity.Error, "Exception during message processing, message not deleted", processingException));
+						Logger.Log(new LogEntry(LogEventSeverity.Error, 
+							string.Format("Exception during message processing, message not deleted '{0}'", processingException.Message), 
+							processingException));
 					}
 				}
 
